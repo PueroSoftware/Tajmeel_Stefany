@@ -1,0 +1,544 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* ========== LOGO CORREGIDO ========== */
+#Logo {
+    padding-left: 10px;
+    position: relative;
+    width: 100% !important;
+    max-width: 200px;
+    height: auto;
+}
+
+/* ========== SLOGAN ========== */
+#Slogan {
+    border-bottom-style: ridge;
+    padding: 10px;
+    font-weight: bold;
+    justify-content: flex-end;
+    margin-top: 15px !important;
+    width: 100%;
+    display: block;
+}
+
+/* ========== BOTONES ========== */
+.btn-home {
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    font-size: 16px;
+    margin-right: 20px;
+    background-color: #465A56 !important;
+}
+
+#btnone {
+    padding-left: relative;
+    position: relative;
+}
+
+/* ========== ANIMACIONES ========== */
+@keyframes fadeSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animated-fade-slide {
+    animation: fadeSlideUp 1.2s ease-out forwards;
+    opacity: 0;
+}
+
+.cta {
+    padding-bottom: 20%;
+}
+
+/* ========== NAVBAR ========== */
+@media (min-width: 992px) {
+    .navbar .nav-link {
+        font-size: 1.15rem;
+        padding-left: .9rem;
+        padding-right: .9rem;
+    }
+    .navbar .btn {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .navbar .nav-link {
+        font-size: 1.05rem;
+    }
+}
+
+/* ========== MASTHEAD ========== */
+.masthead {
+    padding-top: 3rem !important;
+    padding-bottom: 2rem !important;
+}
+
+.masthead .carousel,
+.masthead .slider,
+.carousel,
+.slider {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.masthead .carousel-item img,
+.masthead .slider img,
+.carousel-item img,
+.slider img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+    transform: scale(1.15);
+    transform-origin: center;
+    transition: transform .25s ease;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .masthead { 
+        padding-top: 2rem !important; 
+        padding-bottom: 1rem !important; 
+    }
+    .masthead .carousel-item img,
+    .masthead .slider img,
+    .carousel-item img,
+    .slider img {
+        height: 240px;
+        transform: scale(1.05);
+    }
+    
+    /* Mobile adjustments */
+    #Logo {
+        width: 80% !important;
+        max-width: 150px;
+        padding-left: 5px;
+    }
+    
+    #Slogan {
+        font-size: 1.5rem !important;
+        padding: 5px;
+        margin-top: 10px !important;
+    }
+}
+
+/* ========== COLOR SMALL ========== */
+.small {
+    color: #6e807f !important;
+}
+
+/* ========== SECCIÓN ANIMADA ========== */
+#seccion-animada {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background-color: #567c86;
+}
+
+#seccion-animada canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 0;
+}
+
+#seccion-animada .contenido {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: sans-serif;
+}
+
+/* ========== FOOTER ========== */
+footer {
+    background-color: #000000 !important;
+}
+
+footer * {
+    background-color: transparent !important;
+}
+
+footer.bg-black {
+    background-color: #000000 !important;
+}
+
+/* ========== BOTÓN FLOTANTE ========== */
+.contact-bubble {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.contact-bubble:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.contact-bubble i {
+    font-size: 28px;
+    color: white;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.6);
+    }
+}
+
+/* ========== MODAL ========== */
+.contact-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1100;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-modal.show {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+.contact-modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    animation: slideUp 0.3s ease;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: #000;
+}
+
+.contact-modal-content h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-option {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-option {
+    background-color: #25d366;
+    color: white;
+}
+
+.whatsapp-option:hover {
+    background-color: #20ba5a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    color: white;
+}
+
+.telegram-option {
+    background-color: #0088cc;
+    color: white;
+}
+
+.telegram-option:hover {
+    background-color: #006fa8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 136, 204, 0.3);
+    color: white;
+}
+
+.contact-option i {
+    font-size: 28px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .contact-bubble {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .contact-bubble i {
+        font-size: 24px;
+    }
+    
+    .contact-modal-content {
+        padding: 15px;
+    }
+}
+
+/* ========== SOLUCIÓN IPHONE + VIDEO ========== */
+/* ELIMINAR COMPLETAMENTE EL DISPOSITIVO IPHONE */
+.device-wrapper,
+.device {
+    display: none !important;
+}
+
+/* OCULTAR ELEMENTOS EXTRA */
+.shape-1, 
+.shape-2 {
+    display: none !important;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.masthead-device-mockup {
+    position: relative !important;
+    height: 400px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* CÍRCULO GRIS */
+.circle {
+    width: 300px !important;
+    height: 300px !important;
+    background: #b0b0b0 !important;
+    border-radius: 50% !important;
+    display: block !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* VIDEO ENCIMA DEL CÍRCULO */
+.screen.bg-transparent {
+    display: block !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 280px !important;
+    height: 280px !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    background: transparent !important;
+    z-index: 100 !important;
+}
+
+.screen.bg-transparent video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    display: block !important;
+}
+/* ========== SOLUCIÓN DEFINITIVA VIDEO CIRCULAR ========== */
+/* Ocultar completamente el dispositivo iPhone */
+.device-wrapper,
+.device,
+.shape-1, 
+.shape-2 {
+    display: none !important;
+}
+
+/* Contenedor principal */
+.masthead-device-mockup {
+    position: relative !important;
+    height: 400px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Círculo gris de fondo */
+.masthead-device-mockup .circle {
+    width: 300px !important;
+    height: 300px !important;
+    background: #b0b0b0 !important;
+    border-radius: 30% !important;
+    display: block !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* Nuevo contenedor para el video */
+.video-circle-container {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 280px !important;
+    height: 280px !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    z-index: 100 !important;
+    display: block !important;
+}
+
+.video-circle-container video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    display: block !important;
+}
+
+
+
+/* ========== FIN CSS ========== */
+
+/*--------------------------------------------------*/
+/* ========== ESTILOS MEJORADOS PARA EL CARRUSEL ========== */
+.slider-wrapper {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to right, #f5f5f5, #e0e0e0);
+}
+
+/* Contenedor de las imágenes */
+.slider-track {
+    display: flex;
+    gap: 10px; /* separación entre imágenes */
+    width: max-content;
+    height: 100%;
+    animation: scroll 45s linear infinite;
+    padding-right: 10px;
+}
+
+/* Imágenes */
+.slider-img-large {
+    height: 100%;
+    width: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover */
+.slider-img-large:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Pausar animación al pasar el mouse */
+.slider-wrapper:hover .slider-track {
+    animation-play-state: paused;
+}
+
+/* Animación continua */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 900px) {
+    .slider-wrapper {
+        height: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .slider-wrapper {
+        height: 220px;
+    }
+}
+
+/* ===== Redes Sociales Footer ===== */
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-link {
+  color: white;
+  font-size: 1.4rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover {
+  color: #00bcd4; /* azul claro o cambia según tu marca */
+  transform: scale(1.2);
+}

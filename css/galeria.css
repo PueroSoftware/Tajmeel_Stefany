@@ -1,0 +1,309 @@
+/* css/galeria.css
+   Estilos específicos para la página de galería.
+   - Centra y destaca los dos sliders como elemento principal
+   - Mantiene coherencia con Bootstrap 5 (colores, tipografías ya vienen de styles.css)
+*/
+
+/* Contenedor principal */
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0;
+}
+
+/* Título centrado manteniendo el logo a la izquierda */
+header .logo h1 {
+  margin: 0;
+  flex: 1;
+  text-align: center;
+}
+
+/* Mantener coherencia visual de logos */
+#logovcard {
+  height: 80px;
+  width: auto;
+}
+
+#logofooter {
+  height: 120px;
+  width: auto;
+}
+
+header h1 {
+  margin: 0;
+  font-size: clamp(1.25rem, 1.2rem + 1.2vw, 2rem);
+  font-weight: 700;
+}
+
+/* Subtítulo centrado en la página y título entre sliders */
+.wrap > h2,
+.content-grid .section-title {
+  text-align: center;
+  margin: 1.25rem 0; /* más espacio alrededor del título */
+}
+
+/* Contenedor de los sliders */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* siempre una columna: sliders uno debajo del otro */
+  gap: 2rem;
+  align-items: center;
+  justify-items: center; /* centra cada item */
+}
+
+.gallery,
+.gallery-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hacer que cada slider (article.gallery-item) se extienda a todo el ancho de la ventana */
+.gallery-item {
+  width: 100vw;
+  margin-left: calc(50% - 50vw); /* rompe el contenedor centrado para usar todo el viewport */
+  margin-top: 32px;
+  margin-bottom: 32px; /* separación visible entre sliders */
+}
+
+/* Slider wrapper: foco visual */
+.slider-wrapper {
+  width: 100%;
+  max-width: 100%; /* ocupar todo el ancho disponible del contenedor */
+  height: 320px; /* alto base */
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  background: #fff; /* contraste contra fondo */
+  position: relative;
+  overflow: hidden; /* necesario para el efecto */
+}
+
+/* En pantallas grandes, un poco más alto */
+@media (min-width: 1200px) {
+  .slider-wrapper {
+    height: 360px;
+  }
+}
+
+/* En móviles, más compacto */
+@media (max-width: 576px) {
+  .slider-wrapper {
+    height: 220px;
+    max-width: 100%;
+  }
+}
+
+/* Pista del slider: en fila continua */
+.slider-track {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  height: 100%;
+  /* Minimizar artefactos visuales en desplazamiento */
+  will-change: scroll-position;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Imágenes: rellenan el alto, mantienen proporción */
+.slider-img-large {
+  height: 100%;
+  width: 100%; /* cada imagen ocupa el ancho completo del slider */
+  /* Llenar el contenedor y cubrir el ancho, puede recortar para mantener proporción */
+  object-fit: cover;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Ajustes específicos para el Slider B: más separación y tamaño natural */
+#galeria_slider_b .slider-track {
+  gap: 8px;              /* espacio entre imágenes (reducido) */
+  padding: 0 10px;        /* evita que peguen a los bordes */
+  align-items: center;    /* centra verticalmente si hay alturas distintas */
+}
+
+#galeria_slider_b .slider-img-large {
+  width: auto;            /* respeta el ancho natural */
+  height: 100%;
+  object-fit: contain;    /* evita recorte, muestra completa */
+}
+
+/* Realce sutil de bordes para profundidad */
+.slider-wrapper::before,
+.slider-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 40px;
+  height: 100%;
+  pointer-events: none;
+}
+
+.slider-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(255,255,255,0.9), rgba(255,255,255,0));
+}
+
+.slider-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255,255,255,0.9), rgba(255,255,255,0));
+}
+
+/* Desactivar los desvanecidos en bordes si provocan artefactos visuales en sliders full-bleed */
+#galeria_slider_b.slider-wrapper::before,
+#galeria_slider_b.slider-wrapper::after {
+  content: none;
+}
+
+/* Dots de paginación del slider */
+.slider-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.slider-dots button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.25);
+  padding: 0;
+  transition: transform .2s ease, background-color .2s ease;
+}
+
+.slider-dots button.active {
+  background: rgba(var(--bs-primary-rgb, 41,55,240), 0.9);
+  transform: scale(1.15);
+}
+
+/* Footer coherente con el sitio */
+footer {
+  margin-top: 3rem;
+  padding: 1rem 0;
+  background-color: #000000 !important; /* coherente con home-styles.css */
+  color: #ffffff; /* asegurar contraste para texto e iconos */
+}
+
+/* mantener fondo transparente dentro del footer, como en home-styles.css */
+footer * {
+  background-color: transparent !important;
+}
+
+/* helper opcional por coherencia */
+footer.bg-black {
+  background-color: #000000 !important;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.footer-social a {
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.06);
+  color: #ffffff; /* iconos en blanco por defecto */
+  text-decoration: none;
+  transition: transform .2s ease, background-color .2s ease;
+}
+
+.footer-social a:hover { 
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.15);
+}
+
+.footer-social svg {
+  width: 18px; height: 18px; display:block;
+}
+
+/* Compatibilidad con el footer de index.html: clases social-icons + social-link (Font Awesome) */
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  color: #ffffff; /* hereda para los <i class="fab ..."> */
+  text-decoration: none;
+  transition: transform .2s ease, background-color .2s ease, color .2s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.18);
+}
+
+/* Ajustes para iconos de Font Awesome cuando se usen en galería */
+.social-link i,
+.footer-social i,
+.fab, .fa, .fa-brands {
+  color: inherit;
+  font-size: 18px;
+  line-height: 1;
+}
+
+@media (max-width: 576px) {
+  #logovcard { height: 64px; }
+}
+
+/* Paginación (si se usa) */
+.pagination {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.pagination a {
+  text-decoration: none;
+  padding: 0.4rem 0.75rem;
+  border-radius: 0.5rem;
+  background: rgba(0,0,0,0.05);
+  color: inherit;
+}
+
+.pagination a.active {
+  background: rgba(var(--bs-primary-rgb, 41,55,240), 0.15);
+}

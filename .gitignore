@@ -1,0 +1,29 @@
+# Archivos de configuración sensibles
+email_config.php
+phpmailer_config.php
+
+# Datos y registros
+data/
+*.csv
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos temporales
+*.tmp
+*.log
+*.bak
+*~
+
+# Carpetas de vendor/dependencias
+vendor/phpmailer.zip
+
+# Archivos comprimidos
+*.rar
+*.zip
+
+# Configuración local
+.vscode/
+.idea/

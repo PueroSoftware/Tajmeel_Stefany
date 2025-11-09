@@ -1,0 +1,161 @@
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#f7f7f9;
+    margin:0;
+    padding:40px;
+}
+
+.logo{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+#logovcard {
+    height:auto;
+    width:20vw;
+    box-shadow: #070007;
+    image-orientation: from-image;
+    margin-bottom:20px;
+    box-align:center;
+}
+.wrap{
+    max-width:1200px;
+    margin:auto;
+}
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    grid-template-rows:repeat(2,auto);
+    gap:30px;
+}
+.card{
+    background:#fff;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+.slider{
+    position:relative;
+    width:100%;
+    height:350px; /* Aumentado de 200px a 350px */
+    overflow:hidden;
+}
+.slider img{
+    width:100%;
+    height:350px; /* Aumentado de 250px a 350px */
+    object-fit:cover;
+    object-position:center;
+    display:none;
+}
+.slider img.active{display:block;}
+.slider button{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(0,0,0,0.4);
+    color:#fff;
+    border:none;
+    border-radius:50%;
+    width:32px;
+    height:32px;
+    cursor:pointer;
+    font-size:18px;
+    transition:background .3s;
+}
+.slider button:hover{
+    background:rgba(0,0,0,0.6);}
+.slider .prev{
+    left:10px;}
+.slider .next{
+    right:10px;}
+.content{
+    padding:20px; /* Aumentado de 16px a 20px */
+}
+h1{
+    color:#5a2b5c;
+    font-size:20px;
+    margin-bottom:10px;
+}
+ul{
+    padding-left:20px;
+    font-size:14px;
+}
+ul li{
+    margin-bottom:8px;
+}
+
+.footer-content {
+    text-align: center;
+    padding: 20px;
+}
+
+#logofooter {
+    width: 60px;
+    height: auto;
+    margin-top: 10px;
+}
+
+/* Footer (copiado de styles.css) */
+footer a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+}
+footer a:hover, footer a:active, footer a:focus {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: underline;
+}
+.app-badge {
+  height: 3rem;
+}
+
+/* Utilidades mínimas usadas por el footer (Bootstrap-like) */
+.bg-black { background-color: #000000 !important; }
+.bg-dark { background-color: #212529 !important; }
+.text-white-50 { color: rgba(255, 255, 255, 0.5) !important; }
+.small { font-size: 0.875em; }
+.text-center { text-align: center !important; }
+.py-5 { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+.container { width: 100%; max-width: 1140px; margin-right: auto; margin-left: auto; }
+.px-5 { padding-left: 3rem !important; padding-right: 3rem !important; }
+.mb-2 { margin-bottom: 0.5rem !important; }
+.mb-3 { margin-bottom: 1rem !important; }
+.mx-1 { margin-left: 0.25rem !important; margin-right: 0.25rem !important; }
+
+/* Estilos para redes sociales */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+  color: #fff;
+}
+
+.social-link i {
+  line-height: 1;
+}
+
+/* Footer con bordes redondeados solo en vcard */
+footer.bg-black {
+  border-radius: 20px;
+  margin: 20px;
+  overflow: hidden;
+}

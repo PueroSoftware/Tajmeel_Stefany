@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* ========== LOGO CORREGIDO ========== */
+#Logo {
+    padding-left: 10px;
+    position: relative;
+    width: 100% !important;
+    max-width: 200px;
+    height: auto;
+}
+
+/* ========== SLOGAN ========== */
+#Slogan {
+    border-bottom-style: ridge;
+    padding: 10px;
+    font-weight: bold;
+    justify-content: flex-end;
+    margin-top: 15px !important;
+    width: 100%;
+    display: block;
+}
+
+/* ========== Parrafos ========== */
+
+#vision {
+    text-align: justify;
+    text-justify: inter-word;
+    text-wrap: calc(100%);
+}
+#mision {
+    text-align: justify;
+    text-justify: inter-word;
+    text-wrap: calc(100%);
+}
+/* ========== FOOTER ========== */
+footer {
+    background-color: #000000 !important;
+}
+
+footer * {
+    background-color: transparent !important;
+}
+
+footer.bg-black {
+    background-color: #000000 !important;
+}
+/* ========== Logos Mision===Vision ========== */
+.col-sm {
+width: 450px;
+height: 450px;
+
+}
