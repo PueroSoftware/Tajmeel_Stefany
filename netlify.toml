@@ -1,0 +1,48 @@
+# Netlify Configuration File
+
+# Redirects y reglas de enrutamiento
+[[redirects]]
+  from = "/galeria.php"
+  to = "/galeria.html"
+  status = 301
+
+[[redirects]]
+  from = "/Contacto.php"
+  to = "/Contacto.html"
+  status = 301
+
+# Configuración del formulario de contacto
+[[forms]]
+  name = "contacto"
+  
+# Headers de seguridad
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Headers para caché de assets
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+# Configuración de build
+[build]
+  publish = "."
+  
+[build.environment]
+  NODE_VERSION = "18"
