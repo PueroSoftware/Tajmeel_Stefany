@@ -7,7 +7,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Galeria de imagenes Jabones Artesanales</title>
+  <meta name="description" content="Galería de nuestros jabones artesanales y velas aromáticas. Descubre la variedad de productos naturales que ofrecemos.">
+  <meta name="keywords" content="galería productos, jabones fotos, velas imágenes, catálogo productos naturales">
+  <meta property="og:title" content="Galería de Productos - Tajmeel Stefany" />
+  <meta property="og:description" content="Conoce nuestra colección completa de jabones y velas artesanales." />
+  <meta property="og:image" content="assets/galeria/glry1.png" />
+  <title>Galería | Tajmeel Stefany</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
   <!-- Bootstrap + estilos base del sitio -->
   <link rel="stylesheet" href="/css/styles.css">
   <!-- Iconos Font Awesome (para redes sociales, coherente con index.html) -->

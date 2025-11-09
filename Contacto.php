@@ -77,7 +77,12 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contacto - Jabones Naturales</title>
+  <meta name="description" content="Contáctanos para consultas, pedidos o información sobre nuestros jabones artesanales y velas aromáticas.">
+  <meta name="keywords" content="contacto, consultas, pedidos, información, formulario contacto">
+  <meta property="og:title" content="Contacto - Tajmeel Stefany" />
+  <meta property="og:description" content="Envíanos un mensaje y te responderemos pronto." />
+  <title>Contacto | Tajmeel Stefany</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
   
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
