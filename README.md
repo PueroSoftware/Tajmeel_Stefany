@@ -40,7 +40,11 @@ Mueve el proyecto a tu carpeta web según tu entorno:
 - **LAMP (Linux):** `/var/www/html/Website`
 - **MAMP (Mac):** `/Applications/MAMP/htdocs/Website`
 
-### 3. Configurar email SMTP
+### 3. Configurar email (SOLO para versión PHP)
+
+⚠️ **Si usas Netlify:** Salta este paso. El formulario usa Netlify Forms automáticamente.
+
+**Para hosting con PHP (XAMPP/InfinityFree/Hostinger):**
 
 **Paso 1:** Copia el archivo de ejemplo
 
@@ -88,22 +92,60 @@ Este directorio guarda los mensajes como respaldo si falla el envío por email.
 
 ## 🌐 Uso
 
-### Acceso Local
+### Opción 1: Deploy en Netlify (Recomendado - Gratis)
+
+1. **Sube a GitHub** (ya está hecho ✅)
+
+2. **Conecta con Netlify:**
+   - Ve a: https://app.netlify.com/
+   - Click en "Add new site" > "Import an existing project"
+   - Conecta tu repositorio de GitHub
+   - Build settings:
+     - Build command: (dejar vacío)
+     - Publish directory: `/`
+   - Click "Deploy site"
+
+3. **Configurar Netlify Forms:**
+   - En tu dashboard de Netlify, ve a "Forms"
+   - Los formularios se detectarán automáticamente
+   - Recibirás emails de notificación en tu cuenta de Netlify
+   - Opcional: Configura notificaciones de email en Settings > Forms > Form notifications
+
+4. **¡Listo!** Tu sitio estará en: `https://tu-sitio.netlify.app`
+
+**Ventajas de Netlify:**
+- ✅ Hosting gratis e ilimitado
+- ✅ HTTPS automático
+- ✅ Formularios integrados (100 envíos/mes gratis)
+- ✅ Deploy automático desde GitHub
+- ✅ CDN global (super rápido)
+
+---
+
+### Opción 2: Hosting con PHP (XAMPP/Hostinger/InfinityFree)
+
+**Para desarrollo local:**
 
 Abre tu navegador en:
 ```
 http://localhost/Website/
 ```
 
+**Para producción:**
+
+Sube todos los archivos por FTP a tu hosting PHP y configura `email_config.php`.
+
+---
+
 ### Páginas del sitio
 
 - `index.html` - Página principal
 - `about.html` - Acerca de nosotros
-- `galeria.php` - Galería de productos
-- `Contacto.php` - Formulario de contacto
+- `galeria.html` - Galería de productos
+- `Contacto.html` - Formulario de contacto (Netlify Forms)
 - `vcard1.html` - `vcard5.html` - Páginas de beneficios de productos
 
-⚠️ **Nota:** Los archivos `.php` requieren Apache. No funcionan con Live Server o Five Server.
+⚠️ **Nota para Netlify:** Este proyecto usa Netlify Forms para el formulario de contacto. Los archivos `.php` son versiones alternativas para hosting con soporte PHP.
 
 ---
 
@@ -113,11 +155,14 @@ http://localhost/Website/
 Website/
 ├── index.html              # Página principal
 ├── about.html              # Nosotros
-├── galeria.php             # Galería de productos
-├── Contacto.php            # Formulario de contacto
+├── galeria.html            # Galería de productos (HTML puro)
+├── galeria.php             # Galería de productos (versión PHP)
+├── Contacto.html           # Formulario de contacto (Netlify Forms)
+├── Contacto.php            # Formulario de contacto (versión PHP/SMTP)
+├── gracias.html            # Página de agradecimiento
 ├── vcard1-5.html           # Páginas de beneficios
-├── smtp_mailer.php         # Clase SimpleSMTPMailer
-├── email_config.php        # ⚠️ Configuración SMTP (no incluido)
+├── smtp_mailer.php         # Clase SimpleSMTPMailer (solo PHP)
+├── email_config.php        # ⚠️ Configuración SMTP (no incluido, solo PHP)
 ├── email_config.example.php # Plantilla de configuración
 ├── assets/
 │   ├── img/                # Imágenes del sitio
