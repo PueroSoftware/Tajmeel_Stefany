@@ -2,159 +2,138 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Galería de nuestros jabones artesanales y velas aromáticas. Descubre la variedad de productos naturales que ofrecemos.">
-  <meta name="keywords" content="galería productos, jabones fotos, velas imágenes, catálogo productos naturales">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Galería de nuestros jabones artesanales y velas aromáticas. Descubre la variedad de productos naturales que ofrecemos." />
+  <meta name="keywords" content="galería productos, jabones fotos, velas imágenes, catálogo productos naturales" />
   <meta property="og:title" content="Galería de Productos - Tajmeel Stefany" />
   <meta property="og:description" content="Conoce nuestra colección completa de jabones y velas artesanales." />
   <meta property="og:image" content="assets/galeria/glry1.png" />
   <title>Galería | Tajmeel Stefany</title>
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
-  <!-- Bootstrap + estilos base del sitio -->
-  <link rel="stylesheet" href="/css/styles.css">
-  <!-- Iconos Font Awesome (para redes sociales, coherente con index.html) -->
+
+  <!-- Igualar recursos a las otras páginas -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <!-- Estilos específicos de la galería -->
-  <link rel="stylesheet" href="/css/galeria.css">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/galeria.css" />
 </head>
-<body>
-
-  <header>
-    <div class="logo">
-      <a href="index.html">
-        <img src="/assets/img/isologo.png" alt="Logo" id="logovcard"/>
-      </a>
-      <h1>Jabones Naturales Galeria</h1>
+<body id="page-top">
+  <!-- Navigation (copiada de index.html para mantener logo y menú iguales) -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
+    <div class="container px-5">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi-list"></i>
+      </button>
+      <a href="index.html" target="_self" class="align-content-lg-around"><img src="assets/img/isologo.png" alt="Logo Principal" width="160" height="130" id="Logo"/></a>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+          <li class="nav-item"><a class="nav-link me-lg-3" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link me-lg-3" href="about.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link me-lg-3" href="vcard1.html">Beneficios</a></li>
+          <li class="nav-item"><a class="nav-link me-lg-3" href="galeria.html">Galeria de Productos</a></li>
+          <li class="nav-item"><a class="nav-link me-lg-3" href="https://www.tajmeel-stefany.onlinewebshop.net">Tienda</a></li>
+        </ul>
+      </div>
     </div>
-  </header>
+  </nav>
 
-  <main class="wrap">
+  <!-- Main content -->
+  <main class="wrap" style="padding-top: 6.5rem;">
     <div class="content-grid">
-      <!-- SLIDER 1 -->
+      <!-- SLIDER 1 (se rellenará desde JSON) -->
       <article class="gallery-item">
-        <div class="slider-container" id="galeria_slider_a">
-          <div class="slider-wrapper">
-            <img src="assets/galeria/glry4.png" alt="Producto 1" class="slider-image active">
-            <img src="assets/galeria/glry8.png" alt="Producto 2" class="slider-image">
-            <img src="assets/galeria/glry9.png" alt="Producto 3" class="slider-image">
-            <img src="assets/galeria/glry10.png" alt="Producto 4" class="slider-image">
-            <img src="assets/galeria/glry11.png" alt="Producto 5" class="slider-image">
-          </div>
-          <button class="slider-btn prev" onclick="changeSlide('galeria_slider_a', -1)">&#10094;</button>
-          <button class="slider-btn next" onclick="changeSlide('galeria_slider_a', 1)">&#10095;</button>
-          <div class="slider-dots"></div>
+        <div class="slider-wrapper" id="galeria_slider_a">
+          <div class="slider-track"></div>
         </div>
       </article>
 
-      <!-- Título entre los dos sliders -->
       <h2 class="section-title">Jabones Artesanales</h2>
 
-      <!-- SLIDER 2 -->
+      <!-- SLIDER 2 (se rellenará desde JSON) -->
       <article class="gallery-item">
-        <div class="slider-container" id="galeria_slider_b">
-          <div class="slider-wrapper">
-            <img src="assets/galeria/glry12.png" alt="Jabón 1" class="slider-image active">
-            <img src="assets/galeria/glry2.png" alt="Jabón 2" class="slider-image">
-            <img src="assets/galeria/glry6.png" alt="Jabón 3" class="slider-image">
-            <img src="assets/galeria/glry7.png" alt="Jabón 4" class="slider-image">
-            <img src="assets/galeria/glry1.png" alt="Jabón 5" class="slider-image">
-          </div>
-          <button class="slider-btn prev" onclick="changeSlide('galeria_slider_b', -1)">&#10094;</button>
-          <button class="slider-btn next" onclick="changeSlide('galeria_slider_b', 1)">&#10095;</button>
-          <div class="slider-dots"></div>
+        <div class="slider-wrapper" id="galeria_slider_b">
+          <div class="slider-track"></div>
         </div>
       </article>
-
     </div>
   </main>
 
-  <!-- Footer -->
+  <!-- Footer (igual que en las demás páginas) -->
   <footer class="bg-black text-center py-5">
     <div class="container px-5">
       <div class="text-white-50 small">
         <div class="mb-2">&copy; Pucusoft 2025.</div>
-
         <div class="social-icons mb-3">
           <a href="https://www.facebook.com/share/19v7UZuW1G/" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
           <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=z89ygrg" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
           <a href="https://wa.me/593964039291" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
           <a href="https://www.tiktok.com/@stepha7554?_t=ZM-90GstmMNmbQ&_r=1" target="_blank" class="social-link"><i class="fab fa-tiktok"></i></a>
         </div>
-
-        <a href="#!">Derechos Reservados.</a>
+        <a href="#">Derechos Reservados.</a>
         <span class="mx-1">&middot;</span>
-        <a href="https://pucusoft.netlify.app/">
-          <img class="app-badge" src="assets/img/LogoPucusoft.png" alt="logo pucusoft" />
-        </a>
+        <a href="https://pucusoft.netlify.app/"><img class="app-badge" src="assets/img/LogoPucusoft.png" alt="logo pucusoft"/></a>
       </div>
     </div>
   </footer>
 
-  <!-- Script del Slider -->
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="/js/galeria.js"></script>
+
   <script>
-    // Inicializar sliders
-    const sliders = {};
+    // Construye los sliders desde JSON y llama a initMarquee (expuesto por js/galeria.js)
+    async function buildGallery() {
+      try {
+        const res = await fetch('assets/galeria/galeria.json');
+        if (!res.ok) throw new Error('No se pudo cargar el JSON de la galería');
+        const data = await res.json();
 
-    function initSlider(sliderId) {
-      const container = document.getElementById(sliderId);
-      const images = container.querySelectorAll('.slider-image');
-      const dotsContainer = container.querySelector('.slider-dots');
-      
-      sliders[sliderId] = {
-        currentIndex: 0,
-        images: images,
-        total: images.length
-      };
+        const mappings = [
+          { id: 'galeria_slider_a', images: data.a || [], direction: 'rtl' },
+          { id: 'galeria_slider_b', images: data.b || [], direction: 'ltr' }
+        ];
 
-      // Crear dots
-      for (let i = 0; i < images.length; i++) {
-        const dot = document.createElement('span');
-        dot.className = 'dot' + (i === 0 ? ' active' : '');
-        dot.onclick = () => goToSlide(sliderId, i);
-        dotsContainer.appendChild(dot);
+        mappings.forEach(m => {
+          const wrapper = document.getElementById(m.id);
+          if (!wrapper) return;
+          const track = wrapper.querySelector('.slider-track');
+          track.innerHTML = '';
+          m.images.forEach(src => {
+            const img = document.createElement('img');
+            img.className = 'slider-img-large';
+            img.src = src;
+            img.alt = '';
+            track.appendChild(img);
+          });
+          // duplicar para loop suave
+          m.images.forEach(src => {
+            const img = document.createElement('img');
+            img.className = 'slider-img-large';
+            img.src = src;
+            img.alt = '';
+            track.appendChild(img);
+          });
+        });
+
+        const allImgs = Array.from(document.querySelectorAll('.slider-wrapper img'));
+        await Promise.all(allImgs.map(im => im.complete ? Promise.resolve() : new Promise(r => im.addEventListener('load', r, { once: true }))));
+
+        if (window.initMarquee) {
+          window.initMarquee({ id: 'galeria_slider_a', direction: 'rtl', speed: 0.12, autoDots: false });
+          window.initMarquee({ id: 'galeria_slider_b', direction: 'ltr', speed: 0.12, autoDots: false });
+        } else {
+          console.warn('initMarquee no está disponible. Asegúrate de que /js/galeria.js se cargó correctamente.');
+        }
+
+      } catch (err) {
+        console.error('Error al construir la galería:', err);
       }
-
-      // Auto-play cada 5 segundos
-      setInterval(() => changeSlide(sliderId, 1), 5000);
     }
 
-    function changeSlide(sliderId, direction) {
-      const slider = sliders[sliderId];
-      slider.images[slider.currentIndex].classList.remove('active');
-      
-      slider.currentIndex += direction;
-      
-      if (slider.currentIndex >= slider.total) {
-        slider.currentIndex = 0;
-      } else if (slider.currentIndex < 0) {
-        slider.currentIndex = slider.total - 1;
-      }
-      
-      slider.images[slider.currentIndex].classList.add('active');
-      updateDots(sliderId);
-    }
-
-    function goToSlide(sliderId, index) {
-      const slider = sliders[sliderId];
-      slider.images[slider.currentIndex].classList.remove('active');
-      slider.currentIndex = index;
-      slider.images[slider.currentIndex].classList.add('active');
-      updateDots(sliderId);
-    }
-
-    function updateDots(sliderId) {
-      const container = document.getElementById(sliderId);
-      const dots = container.querySelectorAll('.dot');
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === sliders[sliderId].currentIndex);
-      });
-    }
-
-    // Inicializar al cargar
-    document.addEventListener('DOMContentLoaded', () => {
-      initSlider('galeria_slider_a');
-      initSlider('galeria_slider_b');
-    });
+    document.addEventListener('DOMContentLoaded', buildGallery);
   </script>
 </body>
 </html>

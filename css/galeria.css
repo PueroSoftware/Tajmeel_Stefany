@@ -116,8 +116,11 @@ header h1 {
 /* Imágenes: rellenan el alto, mantienen proporción */
 .slider-img-large {
   height: 100%;
-  width: 100%; /* cada imagen ocupa el ancho completo del slider */
-  /* Llenar el contenedor y cubrir el ancho, puede recortar para mantener proporción */
+  /* No forzar al 100% del ancho: mantener el ancho natural y evitar que flex estire las imágenes.
+     Esto es necesario para que el script marquee funcione correctamente (usa desplazamiento con scrollLeft).
+     Usamos flex: 0 0 auto para que cada imagen conserve su tamaño horizontal natural dentro del track. */
+  width: auto;
+  flex: 0 0 auto;
   object-fit: cover;
   display: block;
   user-select: none;

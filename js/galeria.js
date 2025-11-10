@@ -212,11 +212,7 @@
     return { start, stop, recalc };
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
-    // Slider A: derecha a izquierda (las imágenes se mueven hacia la izquierda)
-  initMarquee({ id: "galeria_slider_a", direction: "rtl", speed: 0.12, autoDots: false });
-
-    // Slider B: izquierda a derecha (las imágenes se mueven hacia la derecha)
-  initMarquee({ id: "galeria_slider_b", direction: "ltr", speed: 0.12, autoDots: false });
-  });
+  // Exponer initMarquee al scope global para que páginas estáticas puedan construir
+  // el DOM dinámicamente (por ejemplo en Netlify, sin PHP) y luego inicializar.
+  window.initMarquee = initMarquee;
 })();
